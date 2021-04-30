@@ -3,15 +3,22 @@
 	  	<a class="navbar-brand"  href="index.php">CVER</a>
 		  <ul class="navbar-nav">
 		    <li class="nav-item">
-		      <a class="nav-link" href="user_registration.php">Register</a>
+		      <a class="nav-link" href="index.php">Home</a>
 		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link" href="user_login.php">Login</a>
+		    <li class="nav-item dropdown">
+		      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+		        Care Giver
+		      </a>
+		      <div class="dropdown-menu">
+		        <a class="dropdown-item" href="request_approval_caregiver.php">Request Approval</a>
+		        <a class="dropdown-item" href="#">Link 2</a>
+		        <a class="dropdown-item" href="#">Link 3</a>
+		      </div>
 		    </li>
 
 		    <li class="nav-item dropdown">
 		      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-		        Dropdown link
+		       Oxygen Service
 		      </a>
 		      <div class="dropdown-menu">
 		        <a class="dropdown-item" href="#">Link 1</a>

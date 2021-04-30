@@ -11,28 +11,9 @@
 	<?php require 'navigation_bar.php' ?>
 
 	<div class="container">
-		<div class="requirements">
-			<h3 class="text-center">Requirements for Applying in Care Giver</h3>
-			
-			<div style="margin-left: 27%;">
-				<ol>
-					<li>
-						<p style="font-weight: 700;color: red;">This candidate must complete his/her SSC examination</p>
-					</li>
-
-					<li>
-						<p style="font-weight: 700;color: red;">Must be of age 18+</p>
-						
-					</li>
-
-					
-				</ol>
-			</div>
-		</div>
-
 		<div class="registration_form">
-			<h3 class="text-center">Registration Form</h3>
-			<form action="registration_backend.php" method="POST" enctype="multipart/form-data">
+			<h3 class="text-center">User Registration Form</h3>
+			<form action="user_registration_backend.php" method="POST" enctype="multipart/form-data">
 				
 			  <div class="row">
 			    <div class="col">
@@ -82,30 +63,26 @@
 					  <option value="O+">O+</option>
 					  <option value="O-">O-</option>
 					</select>
-			    </div>
+			    </div>	
+
 
 			    <div class="col">
-			      <label>Years of Experience in Nursing:(if any)</label>
-			      <input type="number" class="form-control" placeholder="Enter your experience" name="experience">
+			      <label>Patient Type</label>
+			      <select class="form-control" name="patient_type">
+			      	  <option >--Select Group--</option>
+			      	  <option value="MENTAL_DISORDER">Mental Disorder</option>
+					  <option value="CANCER">Cancer</option>
+					  <option value="Parkinson’s">Parkinson’s Disease</option>
+					  <option value="Spine_Troma">Spine Troma Disease</option>
+					  <option value="Cardiac">Cardiac Disease</option>
+					  <option value="Kidney">Kidney</option>
+					  <option value="Diabetic">Diabetic</option>
+					  <option value="Lungs">Lungs</option>
+				  
+					</select>
 			    </div>
 
-			    <div class="col">
-			      <label>Resume or CV:</label>
-			      <input type="file" class="form-control" name="fileToUpload">
-
-			      <?php 
-
-			      	if(isset($_GET['msg']))
-			      	{
-			      ?>	
-
-			      <span style="color: red;font-weight: 700;">Please insert PDF file only</span>
-
-			      <?php 
-			      	}
-
-			      ?>
-			    </div>
+			   
 			  </div>
 
 			    
