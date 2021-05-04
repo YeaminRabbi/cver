@@ -10,7 +10,7 @@
 
 	<?php require 'navigation_bar.php' ?>
 
-	<h2>MAMA asisi user hoiye</h2>
+	<h2>You have been successfully logged in as USER </h2>
 	
 	<?php require 'footer.php' ?>
 	

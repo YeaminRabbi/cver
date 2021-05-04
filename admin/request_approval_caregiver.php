@@ -32,6 +32,7 @@
 		      <tr>
 		      	<th>SL</th>
 		        <th>Name</th>
+		        <th>Image</th>
 		        <th>Email</th>
 		        <th>Nid</th>
 		        <th>Experience</th>
@@ -50,6 +51,7 @@
 		     	<tr>
 		     		<td><?= $key+1 ?></td>
 		     		<td><?= $data['cg_username'] ?></td>
+		     		<td><img src="../<?= $data['cg_image'] ?>" width="50"></td>
 		     		<td><?= $data['cg_email'] ?></td>
 		     		<td><?= $data['cg_nid'] ?></td>
 		     		<td><?= $data['cg_experience'] ?></td>
@@ -87,6 +89,7 @@
 		      <tr>
 		      	<th>SL</th>
 		        <th>Name</th>
+		        <th>Image</th>
 		        <th>Email</th>
 		        <th>Nid</th>
 		        <th>Experience</th>
@@ -105,6 +108,7 @@
 		     	<tr>
 		     		<td><?= $key+1 ?></td>
 		     		<td><?= $data['cg_username'] ?></td>
+		     		<td><img src="../<?= $data['cg_image'] ?>" width="50"></td>
 		     		<td><?= $data['cg_email'] ?></td>
 		     		<td><?= $data['cg_nid'] ?></td>
 		     		<td><?= $data['cg_experience'] ?></td>

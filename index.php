@@ -89,7 +89,12 @@
 			      <input type="number" class="form-control" placeholder="Enter your experience" name="experience">
 			    </div>
 
-			    <div class="col">
+			    
+			  </div>
+
+			  <div class="row mt-4">
+
+			  	<div class="col">
 			      <label>Resume or CV:</label>
 			      <input type="file" class="form-control" name="fileToUpload">
 
@@ -106,7 +111,29 @@
 
 			      ?>
 			    </div>
+
+			  	<div class="col">
+			      <label>Profile Picture:</label>
+			      <input type="file" class="form-control" name="fileToUploadpicture">
+
+			      <?php 
+
+			      	if(isset($_GET['msg']))
+			      	{
+			      ?>	
+
+			      <span style="color: red;font-weight: 700;">Please insert PICTURE file only</span>
+
+			      <?php 
+			      	}
+
+			      ?>
+			    </div>
 			  </div>
+			
+			</div>
+
+
 
 			    
 			  <button class="btn btn-outline-primary mt-3" name="btn-register">Submit</button>

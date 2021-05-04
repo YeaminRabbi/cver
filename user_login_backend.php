@@ -6,13 +6,13 @@
 	{
 
 		$email = $_POST['email'];
-		$nid = $_POST['nid'];
+		$password = $_POST['password'];
 
-		$sql = "select * from users where email = '$email' and nid = '$nid';";
+		$sql = "select * from users where email = '$email' and password = '$password';";
 		$stmt = $pdo->prepare($sql);
 	    $stmt->execute(array(
 	        ':email' => $email,
-	        ':nid' => $nid));
+	        ':password' => $password));
 
 	     if($stmt->rowCount()==1){
 	     	

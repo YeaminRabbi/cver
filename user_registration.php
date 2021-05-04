@@ -78,8 +78,14 @@
 					  <option value="Kidney">Kidney</option>
 					  <option value="Diabetic">Diabetic</option>
 					  <option value="Lungs">Lungs</option>
+					  <option value="Others">Others</option>
 				  
 					</select>
+			    </div>
+
+			    <div class="col">
+			      <label>Password:</label>
+			      <input type="password" class="form-control" placeholder="Enter Password" name="password">
 			    </div>
 
 			   
@@ -97,7 +103,7 @@
 			      ?>	
 
 			      <span style="color: green;font-weight: 700;">Your informations have been submitted</span>
-
+			      <a href="user_login.php" class="btn btn-warning">Login</a>
 			      <?php 
 			      	}
 
