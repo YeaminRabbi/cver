@@ -8,9 +8,17 @@
 
 <body>
 
-	<?php require 'navigation_bar.php' ?>
+	<?php 
 
-	<h2>You have been successfully logged in as USER </h2>
+		session_start();
+		require 'navigation_bar.php';
+		$user=$_SESSION['user'];
+
+
+
+	 ?>
+
+	<h2>You have been successfully logged in as <?= $user['username'] ?> </h2>
 	
 	<?php require 'footer.php' ?>
 	

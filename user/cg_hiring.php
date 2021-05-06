@@ -12,22 +12,35 @@
 
 	<?php require 'data_collection.php' ?>
 
+	<?php
+		session_start();
 
+		$user=$_SESSION['user'];
+
+
+
+		if(isset($_GET['id']))
+		{
+			$cg_id=$_GET['id'];
+
+
+			$sql="Select * FROM care_giver_users where id = '$cg_id';";
+		    $result = mysqli_query($db,$sql);
+		    $data = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+
+	?>
 
 
 
 	<div class="container mt-4 mb-4">
-	  <h4 class="text-center"> Showing All Available Care Giver(s)</h4>
+	  <h4 class="text-center"> Hire this Care Giver</h4>
 
 	 
 	  	<div class="row" style="padding-bottom: 50px;">
-	  		 <?php
-
-			  	foreach ($cg_users_from_Database as $key => $data) {
-			  ?>
-
+	  		
 	  		<div class="col mt-2">
-	  			<div class="card" style="width:350px">
+	  				<div class="card" style="width:350px">
 				    <img class="card-img-top mt-2" src="../<?= $data['cg_image'] ?>" alt="Card image" style="width:250px;margin-left: 13%;height:250px;">
 				    <div class="card-body text-center">
 				      <h4 class="card-title"><?= $data['cg_username'] ?></h4>
@@ -35,16 +48,45 @@
 				      <p class="card-text">DOB: <?= $data['cg_dob'] ?></p>
 				      <p class="card-text">Phone no: <?= $data['cg_phone'] ?></p>
 
-				      <a href="cg_hiring.php?id=<?= $data['id'] ?>" class="btn btn-primary">Hire Me</a>
+				      
+				      <a href="cg_list.php" class="btn btn-dark">Back</a>
+
 				    </div>
 				 </div>
 	  		</div>
 
-	  		  <?php 
-				  	}
 
+	  		<div class="col mt-2">
+	  			<form action="cg_hiring_backend.php" method="POST">
+					<input type="hidden" name="cg_id" value="<?= $cg_id ?>">
+					<input type="hidden" name="user_id" value="<?= $user['id'] ?>">
 
-				  ?>
+				 	<div>
+				      <label>Start Date:</label>
+				      <input type="date" class="form-control" placeholder="Enter Birth date" name="start_date">
+				    </div>
+
+				    <div>
+				      <label>End Date:</label>
+				      <input type="date" class="form-control" placeholder="Enter Birth date" name="end_date">
+				    </div>
+				
+				   	<?php
+
+				   			if(isset($_GET['msg']))
+				   			{
+				   	?>
+				   		<p style="color: green;font-weight: 700;">Hire Successfully</p>
+				   	<?php 
+				   			}
+
+				   	?>
+				  <button class="btn btn-outline-primary mt-3" name="btn-hiring">Submit</button>
+
+				  
+				</form>	
+	  		</div>
+
 	  	</div>
 		  
 	

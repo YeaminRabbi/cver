@@ -1,5 +1,7 @@
 <?php
 	
+	session_start();
+
 	require 'db_config.php';
 
 	if(isset($_POST['btn-login']))
@@ -16,7 +18,12 @@
 
 	     if($stmt->rowCount()==1){
 	     	
+	     	  $user=getUserData($db,$email,$password);
+               //Keeping useres all data in the session
+               $_SESSION['user']=$user;
+
 			header("Location: user/index.php");
+
 
 	     }
 	     else{
@@ -26,6 +33,21 @@
 
 	}
 
+
+	  function getUserData($db,$email,$password){
+
+       	  $sql="Select * FROM users where email = '".$email."' and password = '".$password."';";
+	      $result = mysqli_query($db,$sql);
+
+	      // Assoc array
+	      $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+	            
+	      // Free result set
+	      mysqli_free_result($result);
+	      mysqli_close($db);
+
+	      return $row;
+  	 }
 
 
 ?>
