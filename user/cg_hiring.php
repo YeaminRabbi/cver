@@ -63,12 +63,12 @@
 
 				 	<div>
 				      <label>Start Date:</label>
-				      <input type="date" class="form-control" placeholder="Enter Birth date" name="start_date">
+				      <input type="date" class="form-control" placeholder="Enter Birth date" name="start_date" required>
 				    </div>
 
 				    <div>
 				      <label>End Date:</label>
-				      <input type="date" class="form-control" placeholder="Enter Birth date" name="end_date">
+				      <input type="date" class="form-control" placeholder="Enter Birth date" name="end_date" required>
 				    </div>
 				
 				   	<?php
@@ -77,6 +77,13 @@
 				   			{
 				   	?>
 				   		<p style="color: green;font-weight: 700;">Hire Successfully</p>
+				   	<?php 
+				   			}
+				   			if(isset($_GET['freedate']))
+				   			{
+				   	?>
+				   			<p style="color: red;font-weight: 700;">This care giver is booked upto <?= $_GET['freedate'] ?></p>
+
 				   	<?php 
 				   			}
 

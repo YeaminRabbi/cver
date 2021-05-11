@@ -32,4 +32,23 @@
 	    
 	  }
 
+
+	   function fetch_all_data_usingDB($db,$sql)
+		{
+			
+			$result = mysqli_query($db,$sql);
+
+		    // Assoc array
+		    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		        
+		    // Free result set
+		    mysqli_free_result($result);
+		  
+		    return $row;
+		}
+
+	 
+
+
+
 ?>
