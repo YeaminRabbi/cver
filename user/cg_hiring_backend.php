@@ -12,7 +12,9 @@
 
 
 
-		$hiring_value=fetch_all_data_usingDB($db,"SELECT COUNT(*),end_date FROM `cg_hiring` where ('$start_date' between start_date and end_date) and (cg_id='$cg_id')");
+		$hiring_value=fetch_all_data_usingDB($db,"SELECT COUNT(*),end_date FROM `cg_hiring` where (('$start_date' between start_date and end_date) or ('$end_date' between start_date and end_date) ) and (cg_id='$cg_id')");
+
+
 
 		$conflict=$hiring_value['COUNT(*)'];
 		$available_date=$hiring_value['end_date'];
