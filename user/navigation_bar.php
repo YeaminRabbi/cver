@@ -11,8 +11,7 @@
 		      </a>
 		      <div class="dropdown-menu">
 		        <a class="dropdown-item" href="cg_list.php">Request for Care Giver</a>
-		        <a class="dropdown-item" href="#">Link 2</a>
-		        <a class="dropdown-item" href="#">Link 3</a>
+		      
 		      </div>
 		    </li>
 

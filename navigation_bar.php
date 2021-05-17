@@ -23,9 +23,19 @@
 		      </a>
 		      <div class="dropdown-menu">
 		        <a class="dropdown-item" href="cg_application.php">Care Giver</a>
-		        <a class="dropdown-item" href="#">Oxygen Service</a>
+		        <a class="dropdown-item" href="os_application.php">Oxygen Service</a>
 		       
 		      </div>
+		    </li>
+
+
+		     <li class="nav-item">
+		      <a class="nav-link" href="admin_login.php">Admin</a>
+		    </li>
+
+
+		    <li class="nav-item">
+		      <a class="nav-link" href="os_login.php">OS Service</a>
 		    </li>
 		  </ul>
 	  </div>

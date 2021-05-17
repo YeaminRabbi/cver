@@ -30,7 +30,7 @@
 				// Check if $uploadOk is set to 0 by an error
 				if ($uploadOk == 0) {
 				  
-				  header('Location: index.php?msg=error');
+				  header('Location: cg_application.php?msg=error');
 				  die();
 
 				// if everything is ok, try to upload file
@@ -62,7 +62,7 @@
 				// Check if $uploadOk is set to 0 by an error
 				if ($uploadOk2 == 0) {
 				  
-				  header('Location: index.php?pmsg=error');
+				  header('Location: cg_application.php?pmsg=error');
 				  die();
 
 				// if everything is ok, try to upload file
@@ -84,7 +84,7 @@
 		$sql = "INSERT INTO care_giver_users (cg_username,cg_email,cg_dob,cg_nid,cg_experience,cg_phone,cg_blood_group,cg_address,cg_resume,approve_status,cg_image) VALUES ('$name', '$email', '$dob','$nid','$experience','$phone','$blood_group','$address','$target_file',0,'$target_file2')";
 		$db->query($sql);
 
-		header('Location: index.php?imsg=insert');
+		header('Location: cg_application.php?imsg=insert');
 
 	}
 

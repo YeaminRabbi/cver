@@ -11,8 +11,7 @@
 		      </a>
 		      <div class="dropdown-menu">
 		        <a class="dropdown-item" href="request_approval_caregiver.php">Request Approval</a>
-		        <a class="dropdown-item" href="#">Link 2</a>
-		        <a class="dropdown-item" href="#">Link 3</a>
+		        <a class="dropdown-item" href="cg_hiring_list.php">CG Hire List</a>
 		      </div>
 		    </li>
 
@@ -21,10 +20,14 @@
 		       Oxygen Service
 		      </a>
 		      <div class="dropdown-menu">
-		        <a class="dropdown-item" href="#">Link 1</a>
+		        <a class="dropdown-item" href="request_approval_os.php">Request Approval</a>
 		        <a class="dropdown-item" href="#">Link 2</a>
 		        <a class="dropdown-item" href="#">Link 3</a>
 		      </div>
+		    </li>
+
+		    <li class="nav-item">
+		      <a class="nav-link" href="../index.php">Logout</a>
 		    </li>
 		  </ul>
 	  </div>
