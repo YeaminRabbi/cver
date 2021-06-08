@@ -9,8 +9,71 @@
 <body>
 
 	<?php require 'navigation_bar.php' ?>
+	<?php 
+		require '../db_config.php';
 
+		session_start();
+		$os_user= $_SESSION['os_user'];
+		$os_id = $os_user['id'];
+
+	 	$sql="Select * FROM cylinder where os_id='$os_id'";
+	    $statement = $pdo->prepare($sql);
+	    $statement->execute();
+	    $alldata = $statement->fetchAll();
+
+	?>
 	
+	<div class="mt-5 ml-5 mb-5" style="width: 95%;">
+
+		<h3 class="text-center">Cylinder Information</h3>
+		<table class="table">
+		    <thead class="thead-dark">
+		      <tr>
+		      	<th>SL</th>
+		        <th>Cylinder Name</th>
+		        <th>Type</th>
+		        <th>Quantity</th>
+		        <th>Price</th>
+		       
+		        <th>Action</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <?php 
+
+		      	foreach ($alldata as $key => $data) {
+		     ?>
+
+		     	<tr>
+		     		<td><?= $key+1 ?></td>
+		     		<td><?= $data['cylinder_name'] ?></td>
+		     		
+		     		<td><?= $data['type'] ?></td>
+		     		<td><?= $data['quantity'] ?></td>
+		     		<td><?= $data['price'] ?></td>
+		     		
+		     		<td>
+		     			
+		     			<a href="cylinder_edit.php?id=<?= $data['id'] ?>" class="btn btn-primary">Edit</a>
+		     			
+						<a href="cylinder_backend.php?id=<?= $data['id'] ?>" class="btn btn-danger">Delete</a>
+
+
+
+		     			
+		     		</td>
+
+
+		     	</tr>
+
+		     <?php
+		      	}
+
+		      ?>
+		    </tbody>
+		  </table>
+	</div>
+
 	
 	<?php require 'footer.php' ?>
 	

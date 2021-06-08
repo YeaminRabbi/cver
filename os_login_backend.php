@@ -19,6 +19,7 @@
 	     if($stmt->rowCount()==1){
 	     	
 	     	  $os_user=getOS_UserData($db,$email,$password);
+
                //Keeping useres all data in the session
                $_SESSION['os_user']=$os_user;
 
@@ -34,9 +35,9 @@
 	}
 
 
-	 function getOS_UserData($db,$email,$password){
+	function getOS_UserData($db,$email,$password){
 
-       	  $sql="Select * FROM os_users where email = '".$email."' and password = '".$password."' where approve_status=1;";
+       	  $sql="Select * FROM os_users where company_email = '".$email."' and password = '".$password."';";
 	      $result = mysqli_query($db,$sql);
 
 	      // Assoc array

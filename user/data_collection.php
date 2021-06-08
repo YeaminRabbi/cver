@@ -5,6 +5,7 @@
 
 	$cg_users_from_Database=fetch_data_pdo_from_table($pdo,'care_giver_users',1);
 
+	
 
 
 	 function fetch_data_pdo_from_table($pdo,$table_name,$approve_status)

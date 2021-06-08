@@ -17,12 +17,6 @@
 		$sql = "INSERT INTO users (username,email,dob,nid,phone,blood_group,address,patient_type,password) VALUES ('$name', '$email', '$dob','$nid','$phone','$blood_group','$address','$patient_type','$password')";
 		$db->query($sql);
 
-
-
-		//Sending mail after USER Registration
-		$msg = "Hello! ".$name.", your account has been created.\nWelcome to CVER.";
-		mail($email,"CVER Notification",$msg);
-
 		header('Location: user_registration.php?imsg=insert');
 
 	}

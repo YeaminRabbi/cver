@@ -5,8 +5,15 @@
 		    <li class="nav-item">
 		      <a class="nav-link" href="index.php">Home</a>
 		    </li>
+
+		    <li class="nav-item">
+		      <a class="nav-link" href="cylinder.php">Cylinder</a>
+		    </li>
+
 		    
-		    
+		     <li class="nav-item">
+		      <a class="nav-link" href="logout.php">Logout</a>
+		    </li>
 
 
 		    
