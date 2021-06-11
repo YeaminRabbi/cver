@@ -32,31 +32,34 @@
 		<h3 class="text-center mt-5">Cylinder Information</h3>
 		<div class="registration_form mt-5">
 			
-			<form action="cylinder_backend.php" method="POST" enctype="multipart/form-data">
+			<form action="payment.php" method="POST">
 				<input type="hidden" name="id" value="<?= $id ?>">
 				<input type="hidden" name="os_id" value="<?= $data['os_id'] ?>">
+				<input type="hidden" name="cylinder_name" value="<?= $data['cylinder_name'] ?>">
+				<input type="hidden" name="type" value="<?= $data['type'] ?>">
+				<input type="hidden" name="price" value="<?= $data['price'] ?>">
 
 			  <div class="row">
 
 			  	<div class="col">
 			      <label>Cylinder name:</label>
-			      <input type="text" class="form-control" name="cylinder_name" value="<?= $data['cylinder_name'] ?>" disabled>
+			      <input type="text" class="form-control" value="<?= $data['cylinder_name'] ?>" disabled>
 			    </div>
 
 			    <div class="col">
 			      <label>Cylinder Type:(litre)</label>
 			   
-			      	  <input type="text" class="form-control" name="type" value="<?= $data['type'] ?>" disabled>
+			      	  <input type="text" class="form-control"  value="<?= $data['type'] ?>" disabled>
 			    </div>
 
 			    <div class="col">
 			      <label>Quantity:</label>
-			      <input type="number" class="form-control" name="quantity" value="<?= $data['quantity'] ?>" disabled>
+			      <input type="number" class="form-control" value="<?= $data['quantity'] ?>" disabled>
 			    </div>
 
 			    <div class="col">
 			      <label>Price:</label>
-			      <input type="number" class="form-control" name="price" value="<?= $data['price'] ?>" disabled>
+			      <input type="number" class="form-control" value="<?= $data['price'] ?>" disabled>
 			    </div>
 
 			    
@@ -64,10 +67,7 @@
 			  </div>
 			
 				<div class="row mt-2">
-					<div class="col">
-				      <label>Card Number:</label>
-				      <input type="number" class="form-control" name="card_number" required >
-				    </div>
+					
 
 				    <div class="col">
 				      <label>Address:</label>
@@ -76,7 +76,7 @@
 
 				    <div class="col">
 				      <label>Quantity:</label>
-				      <input type="number" class="form-control" name="quantity" min="1" max="<?php $data['quantity']; ?>" required >
+				      <input type="number" class="form-control" name="quantity" min="1" max="<?= $data['quantity']; ?>" required >
 				    </div>
 
 
@@ -85,9 +85,9 @@
 
 
 			    
-			  <button class="btn btn-outline-success mt-3" name="btn-cylinder_update">Order</button>
-
+			  <button class="btn btn-outline-success mt-3" type="submit" name="btn-proceed_payment">Order</button>
 			  <a href="order_cylinder.php" class="btn btn-outline-dark mt-3">Back</a>
+
 
 			</form>
 			

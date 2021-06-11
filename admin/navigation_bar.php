@@ -21,8 +21,7 @@
 		      </a>
 		      <div class="dropdown-menu">
 		        <a class="dropdown-item" href="request_approval_os.php">Request Approval</a>
-		        <a class="dropdown-item" href="#">Link 2</a>
-		        <a class="dropdown-item" href="#">Link 3</a>
+		       
 		      </div>
 		    </li>
 

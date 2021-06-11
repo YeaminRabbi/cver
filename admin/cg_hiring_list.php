@@ -36,7 +36,6 @@
 		      <th>Patient Type</th>
 		      <th>CG Name</th>
 		      <th>CG Phone</th>
-
 		      <th>Start Date</th>
 		      <th>End Date</th>
 		      <th>Hired Time</th>

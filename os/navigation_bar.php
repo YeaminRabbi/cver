@@ -10,6 +10,9 @@
 		      <a class="nav-link" href="cylinder.php">Cylinder</a>
 		    </li>
 
+		    <li class="nav-item">
+		      <a class="nav-link" href="orders.php">Orders</a>
+		    </li>
 		    
 		     <li class="nav-item">
 		      <a class="nav-link" href="logout.php">Logout</a>

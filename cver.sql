@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2021 at 10:23 AM
+-- Generation Time: Jun 11, 2021 at 05:11 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -63,13 +63,6 @@ CREATE TABLE `care_giver_users` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `care_giver_users`
---
-
-INSERT INTO `care_giver_users` (`id`, `cg_username`, `cg_email`, `cg_dob`, `cg_nid`, `cg_experience`, `cg_phone`, `cg_blood_group`, `cg_address`, `cg_resume`, `approve_status`, `cg_image`, `created_at`) VALUES
-(29, 'raisul', 'raisulislam@hagumutu.com', '1995-03-18', '', '10', '12345678', 'A+', 'bosti area', 'cg_resume/', '1', 'cg_profile_picture/182856249_609093117151128_6612734002236610243_n.jpg', '2021-05-04 22:28:57');
-
 -- --------------------------------------------------------
 
 --
@@ -84,16 +77,6 @@ CREATE TABLE `cg_hiring` (
   `end_date` date NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `cg_hiring`
---
-
-INSERT INTO `cg_hiring` (`id`, `user_id`, `cg_id`, `start_date`, `end_date`, `created_at`) VALUES
-(16, 6, 27, '2021-05-12', '2021-05-15', '2021-05-12 14:41:51'),
-(17, 8, 18, '2021-05-25', '2021-05-29', '2021-05-17 19:38:55'),
-(18, 9, 24, '2021-06-29', '2021-07-03', '2021-05-17 19:39:10'),
-(19, 7, 29, '2021-06-10', '2021-06-26', '2021-06-08 13:58:04');
 
 -- --------------------------------------------------------
 
@@ -115,11 +98,41 @@ CREATE TABLE `cylinder` (
 --
 
 INSERT INTO `cylinder` (`id`, `os_id`, `cylinder_name`, `type`, `quantity`, `price`) VALUES
-(1, 6, 'TOTO cylinder', '1500', 5, '1000'),
-(2, 6, 'TOTO cylinder 2', '1700', 15, '2000'),
-(3, 6, 'AFA rr', '2400', 15, '10002'),
-(6, 5, 'China Cylinder', '1700', 25, '5500'),
+(1, 6, 'TOTO cylinder', '1500', 6, '1000'),
+(2, 6, 'TOTO cylinder 2', '1700', 10, '2000'),
+(3, 6, 'AFA rr', '2400', 15, '1000'),
+(6, 5, 'China Cylinder', '1700', 0, '5500'),
 (7, 5, 'TOTO cylinder 2', '2400', 5, '1000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `os_id` int(11) NOT NULL,
+  `type` varchar(234) NOT NULL,
+  `cylinder_name` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `unit_price` varchar(255) NOT NULL,
+  `total_price` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `transaction_id` varchar(255) NOT NULL,
+  `transaction_media` varchar(255) NOT NULL,
+  `payment_datetime` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `os_id`, `type`, `cylinder_name`, `quantity`, `unit_price`, `total_price`, `address`, `transaction_id`, `transaction_media`, `payment_datetime`) VALUES
+(8, 8, 6, '1500', 'TOTO cylinder', 3, '1000', '3000', 'asdf', 'asdf', 'Bkash', '2021-06-11 20:52:27'),
+(9, 8, 6, '1700', 'TOTO cylinder 2', 5, '2000', '10000', 'jklasjdfasdf', 'sadfgsdfg', 'Rocket', '2021-06-11 20:53:51'),
+(10, 8, 5, '1700', 'China Cylinder', 25, '5500', '137500', 'asdsdf', 'sdfgsdf', 'Rocket', '2021-06-11 20:54:12');
 
 -- --------------------------------------------------------
 
@@ -221,6 +234,12 @@ ALTER TABLE `cylinder`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `os_users`
 --
 ALTER TABLE `os_users`
@@ -265,6 +284,12 @@ ALTER TABLE `cg_hiring`
 --
 ALTER TABLE `cylinder`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `os_users`

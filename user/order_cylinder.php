@@ -28,9 +28,24 @@
 
 
 	<div class="container mt-4 mb-4">
+
+ 		<?php
+
+            if(isset($_GET['order']))
+            {
+          ?>
+
+           <div class="alert alert-success alert-dismissible" style="height: 50px;">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+             <p style="color:black;">Order Placed!</p>
+          </div>
+          <?php 
+            }
+          ?>
+
 	  <h4 class="text-center"> Showing All Available Oxygen Cyliders</h4>
 
-	 
+	 	
 	  	<div class="row" style="padding-bottom: 50px;">
 	  		 <?php
 
@@ -42,10 +57,10 @@
 				    
 				    <div class="card-body text-center">
 				      <h4 class="card-title"><?= $data['cylinder_name'] ?></h4>
-				      <p class="card-text">Type: <?= $data['type'] ?></p>
+				      <p class="card-text">Type: <?= $data['type'] ?> L</p>
 				      <p class="card-text">OS: <?= $data['company_name'] ?></p>
 				      <p class="card-text">Available: <?= $data['quantity'] ?></p>
-				      <p class="card-text">Price: <?= $data['price'] ?></p>
+				      <p class="card-text">Price: <?= $data['price'] ?> BDT</p>
 
 				      <a href="order.php?id=<?= $data['id'] ?>" class="btn btn-primary">Place Order</a>
 				    </div>

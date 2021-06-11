@@ -13,10 +13,7 @@
 		$sql = "UPDATE care_giver_users SET approve_status=1 WHERE id='$id';";
 		$db->query($sql);
 
-		//Sending mail after approving the CARE GIVER
-		$msg = "Hello! ".$name.", your application has been approved.\nWelcome to CVER.";
-		mail($email,"CVER Notification",$msg);
-
+		
 
 		header('Location: request_approval_caregiver.php');
 
